@@ -79,46 +79,62 @@ function Home() {
                     </b>
                 </div>
 
-                <Carousel autoplay style={{ width: "600px", margin: "auto" }}>
+                <Carousel autoplay style={{ width: "100%", margin: "auto" }}>
                     {
                         ['image1.jpeg', 'image2.jpg', 'image3.avif', 'image4.jpeg', 'image5.jpeg'].map(key => {
                             console.log(window.location.origin + "/" + key)
-                            return <div style={{ height: "600px", width: "600px" }}>
+                            return <div style={{ height: "600px", width: "100%" }}>
                                 <h3 style={contentStyle}>
-                                    <img src={window.location.origin + "/" + key} width={"600px"} height={"600px"} />
+                                    <img src={window.location.origin + "/" + key} width={"100%"} height={"600px"} />
                                 </h3>
                             </div>
                         })
                     }
                 </Carousel>
 
-                <div style={{ "fontSize": "60px", fontWeight: "600" }}>
+                <div style={{ "fontSize": "40px", fontWeight: "600" }}>
                     States
-                    <a onClick={() => history.push("/states")} style={{ float: "right", "fontSize": "30px", marginTop: "30px" }}>View all</a>
                 </div>
 
                 <div
                     style={{
-                        display: "grid",
-                        gridTemplateColumns: "35% 35% 30%",
-                        gridRowGap: "15px"
+                        display: "inline-block",
+                        paddingRight: "10px",
+                        paddingBottom: "10px"
                     }}
                 >
                     {
                         top3States?.map((state: any) => {
-                            return <div key={state?.Id}>
-                                <Card onClick={() => history.push(`/states/${state?.Id}`)} key={state?.Id} style={{ border: '1px solid #d7d7dc', width: '450px', textAlign: "center", boxShadow: "2px 2px 3px 3px lightgrey" }}>
+                            return <div key={state?.Id}
+                                style={{
+                                    display: "inline-block",
+                                    paddingRight: "10px"
+                                }}
+                            >
+                                <Card onClick={() => history.push(`/states/${state?.Id}`)} key={state?.Id} style={{ border: '1px solid #d7d7dc', width: '350px', textAlign: "center", boxShadow: "2px 2px 3px 3px lightgrey" }}>
                                     <Statistic key={state?.Id}
                                         title={<div style={{ fontWeight: "600", color: "#1890ff", fontSize: "30px" }}>{state?.State}</div>} value={state?.Languages}
                                     />
 
-                                    <img src={window.location.origin + "/state/" + state?.State + ".png"} height={"400px"} width={"400px"} />
+                                    <img src={window.location.origin + "/state/" + state?.State + ".png"} height={"200px"} width={"300px"} />
 
                                     <div style={{ fontSize: "20px" }}><b>Capital</b> - {state?.Capital}</div>
                                 </Card>
                             </div>
                         })
                     }
+
+                    <div
+                        style={{
+                            display: "inline-block",
+                            paddingRight: "10px",
+                            paddingBottom: "10px"
+                        }}
+                    >
+                        <Card style={{ width: '250px', height: "365px", position: "relative", bottom: 150, paddingTop: "50%", textAlign: "center", boxShadow: "2px 2px 3px 3px lightgrey" }}>
+                            <a onClick={() => history.push("/states")} style={{ "fontSize": "30px" }}>View all</a>
+                        </Card>
+                    </div>
                 </div>
             </>
         }

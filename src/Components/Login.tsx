@@ -89,7 +89,14 @@ function Login() {
     }
 
     return (
-        <div style={{ height: "100vh", backgroundImage: `url(${window.location.origin}/login.jpeg)`}}>
+        <div
+            style={{
+                height: "100%",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${window.location.origin}/login.jpeg)`
+            }}
+        >
             <div id="login-container">
                 <div style={{ fontWeight: "500", fontSize: "35px", paddingTop: '35px' }}>
                     Login
@@ -105,7 +112,7 @@ function Login() {
                     style={{ textAlign: 'left', padding: '35px 35px 20px 35px' }}
                 >
                     <Form.Item
-                        label={<>Email<span style={{ color: "red" }}>*</span></>}
+                        label={<div style={{ color: "white" }}>Email<span style={{ color: "red" }}>*</span></div>}
                         validateStatus={checkInvalid()}
                         style={{ marginBottom: '25px' }}
                     >
@@ -119,7 +126,7 @@ function Login() {
                     </Form.Item>
 
                     <Form.Item
-                        label={<>Password<span style={{ color: "red" }}>*</span></>}
+                        label={<div style={{ color: "white" }}>Password<span style={{ color: "red" }}>*</span></div>}
                         style={{ marginBottom: '25px' }}
                     >
                         <Input.Password
@@ -137,8 +144,8 @@ function Login() {
                         >
                             Login
                         </Button>
-                        <div style={{ textAlign: 'center', paddingTop: "10px" }}>
-                            Don't have an account?&nbsp;<a onClick={() => history.push("/sign-up")}>Signup</a>
+                        <div style={{ textAlign: 'center', paddingTop: "10px", color: "white" }}>
+                            Don't have an account?&nbsp;<a onClick={() => history.push("/sign-up")}><b>Signup</b></a>
                         </div>
                     </Form.Item>
                 </Form>

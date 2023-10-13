@@ -15,9 +15,10 @@
 	min-width: 322px;
 	left: 50%;
 	transform: translate(-50%, 0%);
-	border: 1px solid #aeb3b7;
+	color: white;
+	/* border: 1px solid #aeb3b7; */
 	border-radius: 5px;
-	background-color: white;
+	background-color: rgba(0, 0, 0, 0.5);
 	text-align: center;
 	scroll-behavior: smooth;
 }

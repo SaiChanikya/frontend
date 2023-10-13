@@ -108,7 +108,14 @@ function Signup() {
     };
 
     return (
-        <div style={{ height: "100vh", backgroundImage: `url(${window.location.origin}/login.jpeg)` }} >
+        <div
+            style={{
+                height: "100%",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundImage: `url(${window.location.origin}/login.jpeg)`
+            }}
+        >
             <div id="login-container">
                 <div style={{ fontWeight: "500", fontSize: "35px", paddingTop: '35px' }}>
                     Sign up
@@ -124,7 +131,7 @@ function Signup() {
                     style={{ textAlign: 'left', padding: '35px 35px 20px 35px' }}
                 >
                     <Form.Item
-                        label={<>First name</>}
+                        label={<div style={{ color: "white" }}>First name</div>}
                         style={{ marginBottom: '25px' }}
                         name={"first_name"}
                         rules={[
@@ -144,7 +151,7 @@ function Signup() {
                     </Form.Item>
 
                     <Form.Item
-                        label={<>Last name</>}
+                        label={<div style={{ color: "white" }}>Last name</div>}
                         name={"last_name"}
                         style={{ marginBottom: '25px' }}
                         rules={[
@@ -164,7 +171,7 @@ function Signup() {
                     </Form.Item>
 
                     <Form.Item
-                        label={<>Email</>}
+                        label={<div style={{ color: "white" }}>Email</div>}
                         validateStatus={checkInvalid()}
                         name={"email"}
                         style={{ marginBottom: '25px' }}
@@ -180,7 +187,7 @@ function Signup() {
                     </Form.Item>
 
                     <Form.Item
-                        label={<>Password</>}
+                        label={<div style={{ color: "white" }}>Password</div>}
                         style={{ marginBottom: '25px' }}
                         name={"password"}
                     >
@@ -195,7 +202,7 @@ function Signup() {
                     </Form.Item>
 
                     <Form.Item
-                        label={<>Mobile number</>}
+                        label={<div style={{ color: "white" }}>Mobile number</div>}
                         style={{ marginBottom: '25px' }}
                         name={"ph_number"}
                         rules={[
